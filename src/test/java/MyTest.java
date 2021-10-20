@@ -1,8 +1,24 @@
 import org.junit.jupiter.api.Test;
 
-public class MyTest {
-    @Test
-    void name() {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+public class MyTest {
+    @Test public void test4a() {
+        assertEquals("aaaa", Solution.repeatStr(4, "a"));
+    }
+    @Test public void test3Hello() {
+        assertEquals("HelloHelloHello", Solution.repeatStr(3, "Hello"));
+    }
+    @Test public void test5empty() {
+        assertEquals("", Solution.repeatStr(5, ""));
+    }
+    @Test public void test0kata() {
+        assertEquals("", Solution.repeatStr(0, "kata"));
+    }
+
+    private static class Solution {
+        public static String repeatStr(final int repeat, final String string) {
+            return string.repeat(repeat);
+        }
     }
 }
